@@ -1,0 +1,9 @@
+
+kubectl create secret docker-registry regcred --docker-username="Guy Grinhauz" --docker-password="*****" --docker-email="grinhauzguy@gmail.com"
+
+
+
+spec:
+  imagePullSecrets:
+  - name: regcred
+
