@@ -71,11 +71,13 @@ resource "aws_security_group" "allow_ssh" {
 }
 
 resource "aws_instance" "builder" {
-  ami                    = data.aws_ami.ubuntu.id
+  ami                    = "ami-0c02fb55956c7d316"
   instance_type          = "t3.medium"
   key_name               = aws_key_pair.builder_key.key_name
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
-  subnet_id              = data.aws_subnet.public.id
+  subnet_id              = "subnet-02e56693b0dd171bf"
+  associate_public_ip_address = true
+
 
   root_block_device {
     volume_size = 50
@@ -88,11 +90,3 @@ resource "aws_instance" "builder" {
   }
 }
 
-data "aws_subnet" "public" {
-  filter {
-    name   = "tag:Name"
-    values = ["public-subnet"]
-  }
-
-  vpc_id = data.aws_vpc.this.id
-}

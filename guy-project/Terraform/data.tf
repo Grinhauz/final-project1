@@ -3,16 +3,16 @@ data "aws_vpc" "this" {
 }
 
 
-data "aws_ami" "ubuntu" {
-  most_recent = true
+# data "aws_ami" "ubuntu" {
 
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
+#  filter {
+#    name   = "image-id"
+#    values = ["ami-0c02fb55956c7d316"]
+#  }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-}
+
+#  filter {
+#    name   = "virtualization-type"
+#    values = ["hvm"]
+#  }
+# }

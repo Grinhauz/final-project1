@@ -53,13 +53,13 @@ variable "key_name" {
 }
 
 variable "aws_access_key" {
-  default = "AKIAXLEKZJVVREN3MIWD"
+  default = "AKIAXLEKZJVVRYI43OHN"
   type        = string
   sensitive   = true
 }
 
 variable "aws_secret_key" {
-  default = "x9mxe6NVYyJlOFs9I0agMYd5o6yk2zv+kug/9EQu"
+  default = "Vug1NDVBzPt3d7Ugz865GuykVg0UOqyQD4/c31jp"
   type        = string
   sensitive   = true
 }

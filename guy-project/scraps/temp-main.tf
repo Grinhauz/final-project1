@@ -81,3 +81,13 @@ resource "aws_security_group" "ssh_access" {
     Name = "ssh-access"
   }
 }
+
+
+data "aws_subnet" "public" {
+  filter {
+    name   = "tag:Name"
+    values = "tag:subnet"
+  }
+
+  vpc_id = data.aws_vpc.this.id
+}
